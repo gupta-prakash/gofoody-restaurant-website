@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/contact_us.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <title>GoFoody</title>
+</head>
+<body>
+
+    <nav id="navbar">
+        <img src="../IMAGES/my_logo1.png" alt="APPETITE FILLERS" id="logo">
+        <ul id="navItems">
+            <li class="nav-li v-res"><a href="home.html">Home</a></li>
+            <li class="nav-li v-res"><a href="services.html">Services</a></li>
+            <li class="nav-li v-res"><a href="menu.html">Menu</a></li>
+            <li class="nav-li v-res"><a href="about_us.html">About us</a></li>
+            <li class="nav-li v-res"><a href="#" class="active">Contact us</a></li>
+        </ul>
+        <div id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    
+    <div id='map'></div>
+    
+    
+
+    <section id="social_media">
+        <div>
+            <h3>Follow Us On</h3>
+        </div>
+        <div id="social_media_img">
+            <div><a href="https://www.facebook.com/" target="_blank"><img src="../IMAGES/CONTACT US/facebook.png" alt="Facebook" id="facebook"></a></div>
+            <div><a href="https://www.instagram.com/" target="_blank"><img src="../IMAGES/CONTACT US/insta.png" alt="Instagram"></a></div>
+            <div><a href="https://twitter.com/" target="_blank"><img src="../IMAGES/CONTACT US/twitter.png" alt="Twitter" id="twitter"></a></div>
+            <div><a href="https://www.youtube.com/" target="_blank"><img src="../IMAGES/CONTACT US/youtube.png" alt="TouTube"></a></div>
+        </div>
+    </section>
+
+    <section id="feedback">
+        <div>
+            <h3>Feedback</h3>
+        </div>
+        <div id="feedback_form">
+                <div>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div>
+                    <textarea name="views" id="views" cols="30" rows="10" placeholder="Enter your feedback"></textarea>
+                </div>
+                <div>
+                    <button type="submit" onclick="feedback_submitted()" class="btn">Submit</button>
+                </div>
+        </div>
+    </section>
+
+
+    <footer id="footer">
+        <div>
+            <p>copyright © www.gofoody.com | All rights are reserved |</p>
+        </div>
+    </footer>
+    <script src="../JAVASCRIPT/navbar.js"></script>
+</body>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiLXByYWthc2gtLWd1cHRhIiwiYSI6ImNrbWo2dHVxaTAxdDUydnBsaHM4ZWg3cDEifQ.zR6DMydjo_qUujvIGz7RLg';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v10',
+    zoom:4,
+    center:[80,23]
+  });
+</script>
+<script src="../JAVASCRIPT/contact_us.js"></script>
+
+</html>

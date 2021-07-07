@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoFoody</title>
+
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/menu.css">
+
+    <!-- <script src="../JAVASCRIPT/menu.js"></script> -->
+</head>
+
+<body>
+    <nav id="navbar">
+        <img src="../IMAGES/my_logo1.png" alt="APPETITE FILLERS" id="logo">
+        <ul id="navItems">
+            <li class="nav-li v-res"><a href="home.html">Home</a></li>
+            <li class="nav-li v-res"><a href="services.html">Services</a></li>
+            <li class="nav-li v-res"><a href="#" class="active">Menu</a></li>
+            <li class="nav-li v-res"><a href="about_us.html">About us</a></li>
+            <li class="nav-li v-res"><a href="contact_us.html">Contact us</a></li>
+        </ul>
+        <div id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    
+    <section id="filter_section">
+        <form action="#">
+            <div>
+                <label for="main_filter">FILTER : </label>
+                <select name="main_filter" id="main_filter">
+                    <option value="menu_v_nv_all">Menu Type</option>
+                    <option value="nutrient_filter">Nutrient</option>
+                </select>
+            </div>
+            <div class="btn_div">
+                <button type="button" onclick="mainFilter()" class="filter_btn">Select</button>
+            </div>
+        </form>
+
+        <div id="nutrient">
+            <label for="nutrient_type">Nutrient : </label>
+            <select name="nutrient_type" id="nutrient_type">
+                <option value="carbs" selected>Carbs</option>
+                <option value="protein">Protein</option>
+                <option value="fat">Fat</option>
+                <option value="calories">Calories</option>
+                <option value="sugar">Sugar</option>
+            </select>
+
+            <label for="nutrient_amount"></label>
+            <input type="number" name="nutrient_amount" id="nutrient_amount" placeholder="in grams">
+            <div class="btn_div">
+                <button type="button" onclick="filterMenu()" class="filter_btn">Filter</button>
+            </div>
+        </div>
+
+        <div id="menu_v_nv_all">
+            <label for="all_menu">All: </label>
+            <input type="radio" name="menu_type" value="all" checked id="all_menu">
+
+            <label for="veg_menu">Veg: </label>
+            <input type="radio" name="menu_type" value="veg" id="veg_menu">
+
+            <label for="non-veg_menu">Non-Veg: </label>
+            <input type="radio" name="menu_type" value="non-veg" id="non-veg_menu">
+            <div class="btn_div">
+                <button type="button" onclick="filterMenu()" class="filter_btn">Filter</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="order_now_btn_div">
+        <button id="btn"> <a href="../HTML/order_now.html" target="_blank">Order Now</a></button>
+    </div>
+
+    <section id="menu_section">
+
+        <!-- dessert menu -->
+        <div class="left">
+            <table class="veg">
+                <caption>Desserts</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="carbs14 protein5 fat7 calories6 sugar8">
+                        <td>• Ice-Cream (2 scoops)</td>
+                        <td>Rs. 30</td>
+                    </tr>
+                    <tr class="carbs14 protein4 fat8 calories6 sugar9">
+                        <td>• Darsan</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="carbs10 protein5 fat7 calories5 sugar6">
+                        <td>• Brown Zebra</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="carbs8 protein3 fat4 calories4 sugar3">
+                        <td>• Date and Walnut Roll</td>
+                        <td>Rs. 50</td>
+                    </tr>
+                    <tr class="carbs22 protein5 fat4 calories6 sugar5">
+                        <td>• Peanut Butter Chocolate Cream Pie</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="carbs23 protein6 fat9 calories10 sugar10">
+                        <td>• Dark Lava Meltdown</td>
+                        <td>Rs. 110</td>
+                    </tr>
+                    <tr class="carbs18 protein6 fat7 calories8 sugar6">
+                        <td>• Death by Chocolate</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="carbs14 protein5 fat6 calories6 sugar8">
+                        <td>• Death by Waffle</td>
+                        <td>Rs. 180</td>
+                    </tr>
+                    <tr class="carbs20 protein5 fat9 calories8 sugar9">
+                        <td>• Red Velvet Jar</td>
+                        <td>Rs. 150</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- soup menu -->
+        <div  class="right">
+            <table>
+                <caption>Soup</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="veg carbs4 protein3 fat2 calories1 sugar2">
+                        <td>• Mix Veg Clear Soup</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="veg carbs6 protein4 fat4 calories3 sugar3">
+                        <td>• Manchow Soup</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="veg carbs10 protein7 fat3 calories5 sugar3">
+                        <td>• Veg Wonton Soup</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="veg carbs4 protein3 fat2 calories2 sugar4">
+                        <td>• Sweet Corn Soup</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="non-veg carbs12 protein7 fat7 calories6 sugar3">
+                        <td>• Chicken Mushroom Soup</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="non-veg carbs8 protein8 fat3 calories4 sugar4">
+                        <td>• Chicken And Sweet Corn Soup</td>
+                        <td>Rs. 130</td>
+                    </tr>
+                    <tr class="non-veg carbs11 protein7 fat5 calories5 sugar2">
+                        <td>• Beef Wonton Soup</td>
+                        <td>Rs. 130</td>
+                    </tr>
+                    <tr class="non-veg carbs8 protein11 fat4 calories4 sugar4">
+                        <td>• Chicken Tom Yum Soup</td>
+                        <td>Rs. 130</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- rice menu -->
+        <div  class="left">
+            <table>
+                <caption>Rice</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="veg carbs11 protein4 fat1 calories5 sugar2">
+                        <td>• Steamed Rice</td>
+                        <td>Rs. 50</td>
+                    </tr>
+                    <tr class="veg carbs11 protein5 fat4 calories5 sugar1">
+                        <td>• Garlic Steamed Rice</td>
+                        <td>Rs. 50</td>
+                    </tr>
+                    <tr class="both">
+                        <td>• Fried Rice (veg/Chicken)</td>
+                        <td>Rs. 70/90</td>
+                    </tr>
+                    <tr class="both_veg carbs9 protein4 fat4 calories4 sugar2">
+                        <td>• Fried Rice</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="both_non-veg carbs11 protein8 fat5 calories5 sugar2">
+                        <td>• Fried Rice (Chicken)</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="both">
+                        <td>• Chilli Garlic Rice (veg/Chicken)</td>
+                        <td>Rs. 100/120</td>
+                    </tr>
+                    <tr class="both_veg carbs18 protein6 fat5 calories8 sugar4">
+                        <td>• Chilli Garlic Rice</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="both_non-veg carbs21 protein11 fat6 calories9 sugar6">
+                        <td>• Chilli Garlic Rice (Chicken)</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="non-veg carbs14 protein9 fat4 calories6 sugar5">
+                        <td>• Minced Chicken Chilli Fried Rice</td>
+                        <td>Rs. 105</td>
+                    </tr>
+                    <tr class="non-veg carbs12 protein9 fat4 calories6 sugar2">
+                        <td>• Spicy Shrimp Fried Rice</td>
+                        <td>Rs. 135</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- roti menu -->
+        <div class="right">
+            <table class="veg">
+                <caption>Roti</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="carbs5 protein3 fat2 calories2 sugar1">
+                        <td>• Tandoori Roti Plain</td>
+                        <td>Rs. 10</td>
+                    </tr>
+                    <tr class="carbs7 protein4 fat2 calories3 sugar1">
+                        <td>• Tandoori Roti Butter</td>
+                        <td>Rs. 15</td>
+                    </tr>
+                    <tr class="carbs7 protein4 fat3 calories3 sugar1">
+                        <td>• Tawa Roti Plain</td>
+                        <td>Rs. 7</td>
+                    </tr>
+                    <tr class="carbs7 protein3 fat4 calories3 sugar2">
+                        <td>• Tawa Roti Butter</td>
+                        <td>Rs. 10</td>
+                    </tr>
+                    <tr class="carbs5 protein3 fat1 calories2 sugar2">
+                        <td>• Rommali Roti</td>
+                        <td>Rs. 15</td>
+                    </tr>
+                    <tr class="carbs6 protein4 fat3 calories3 sugar2">
+                        <td>• Missi Roti</td>
+                        <td>Rs. 15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- noodles menu -->
+        <div  class="left">
+            <table>
+                <caption>Noddles</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="both">
+                        <td>• Hakka Noodles (veg/Chicken)</td>
+                        <td>Rs. 70/100</td>
+                    </tr>
+                    <tr class="both_veg carbs24 protein7 fat9 calories10 sugar2">
+                        <td>• Hakka Noodles</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="both_non-veg carbs21 protein10 fat9 calories9 sugar3">
+                        <td>• Hakka Noodles (Chicken)</td>
+                        <td>Rs. 100</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Chilli Garlic Noodles (veg/Chicken)</td>
+                        <td>Rs. 70/100</td>
+                    </tr>
+                    <tr class="both_veg carbs21 protein7 fat8 calories9 sugar2">
+                        <td>• Chilli Garlic Noodles</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="both_non-veg carbs9 protein8 fat9 calories5 sugar3">
+                        <td>• Chilli Garlic Noodles (Chicken)</td>
+                        <td>Rs. 100</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Singapore Style Noodles (veg/Chicken)</td>
+                        <td>Rs. 90/120</td>
+                    </tr>
+                    <tr class="both_veg carbs15 protein5 fat5 calories7 sugar4">
+                        <td>• Singapore Style Noodles</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="both_non-veg carbs15 protein9 fat6 calories7 sugar4">
+                        <td>• Singapore Style Noodles (Chicken)</td>
+                        <td>Rs. 120</td>
+                    </tr>
+
+                    <tr class="veg carbs22 protein5 fat9 calories5 sugar3">
+                        <td>• Butter Pepper Garlic Noodles </td>
+                        <td>Rs. 80</td>
+                    </tr>
+                    <tr class="veg carbs12 protein5  fat6 calories6 sugar3">
+                        <td>• Veg Pan Fried Noodles</td>
+                        <td>Rs. 125</td>
+                    </tr>
+                    <tr class="non-veg carbs16 protein9 fat6 calories7 sugar3">
+                        <td>• Chicken Pan Fried Noodles</td>
+                        <td>Rs. 135</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- pizza menu -->
+        <div  class="right">
+            <table>
+                <caption>Pizzas</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="veg carbs11 protein6 fat5 calories5 sugar3">
+                        <td>• Double Cheese Margherita</td>
+                        <td>Rs. 185</td>
+                    </tr>
+                    <tr class="veg carbs24 protein8 fat9 calories10 sugar5">
+                        <td>• Peppy Paneer</td>
+                        <td>Rs. 215</td>
+                    </tr>
+                    <tr class="veg carbs21 protein1 fat9 calories9 sugar5">
+                        <td>• Mexican Green Wave</td>
+                        <td>Rs. 215</td>
+                    </tr>
+                    <tr class="veg carbs14 protein8 fat6 calories6 sugar3">
+                        <td>• Veg Extravaganza</td>
+                        <td>Rs. 235</td>
+                    </tr>
+                    <tr class="non-veg carbs12 protein7 fat5 calories6 sugar3">
+                        <td>• Indi Chicken Tikka Pizza</td>
+                        <td>Rs. 185</td>
+                    </tr>
+                    <tr class="non-veg carbs15 protein11 fat6 calories7 sugar4">
+                        <td>• Chicken Golden Delight</td>
+                        <td>Rs. 235</td>
+                    </tr>
+                    <tr class="non-veg carbs16 protein7 fat4 calories7 sugar4">
+                        <td>• Non Veg Supreme</td>
+                        <td>Rs. 305</td>
+                    </tr>
+                    <tr class="non-veg carbs11 protein7 fat5 calories5 sugar3">
+                        <td>• Chicken Fiesta</td>
+                        <td>Rs. 235</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- burgers menu -->
+        <div  class="left">
+            <table>
+                <caption>Burgers</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="veg carbs12 protein6 fat5 calories6 sugar4">
+                        <td>• Crispy Veg Burger</td>
+                        <td>Rs. 35</td>
+                    </tr>
+                    <tr class="non-veg carbs23 protein9 fat9 calories8 sugar4">
+                        <td>• Chicken Kheema Cruch Burger</td>
+                        <td>Rs. 59</td>
+                    </tr>
+                    <tr class="veg carbs15 protein8 fat8 calories7 sugar5">
+                        <td>• Veg Chilli Cheese Burger</td>
+                        <td>Rs. 79</td>
+                    </tr>
+                    <tr class="non-veg carbs24 protein10 fat9 calories9 sugar5">
+                        <td>• Extra Long Chicken Burger</td>
+                        <td>Rs. 119</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sandwiches menu -->
+        <div  class="right">
+            <table>
+                <caption>Sandwiches</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="both">
+                        <td>• Club Sandwich(veg/non-veg)</td>
+                        <td>Rs. 50/80</td>
+                    </tr>
+                    <tr class="both_veg carbs11 protein7 fat3 calories5 sugar3">
+                        <td>• Club Sandwich</td>
+                        <td>Rs. 50</td>
+                    </tr>
+                    <tr class="both_non-veg carbs20 protein13 fat7 calories8 sugar4">
+                        <td>• Club Sandwich</td>
+                        <td>Rs. 80</td>
+                    </tr>
+
+                    <tr class="non-veg carbs7 protein4 fat3 calories4 sugar4">
+                        <td>• Grilled Paneer Sandwich</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="non-veg carbs17 protein10 fat4 calories7 sugar5">
+                        <td>• Chicken Salad Sandwich</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="veg carbs7 protein5 fat4 calories3 sugar5">
+                        <td>• Chilli Cheese Toast</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="veg carbs10 protein5 fat4 calories5 sugar4">
+                        <td>• Veg Sandwich</td>
+                        <td>Rs. 40</td>
+                    </tr>
+                    <tr class="veg carbs17 protein9 fat7 calories7 sugar5">
+                        <td>• Basil Tomato & Mozzarella Cheese Sandwhich</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Lamb menu -->
+        <div class="left">
+            <table class="non-veg">
+                <caption>Lamb</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="carbs12 protein11 fat6 calories6 sugar1">
+                        <td>• Shredded Lamb in Szechuan Sauce</td>
+                        <td>Rs. 125</td>
+                    </tr>
+                    <tr class="carbs13 protein9 fat6 calories6 sugar4">
+                        <td>• Sliced Lamb in Chilli Bean Sauce</td>
+                        <td>Rs. 125</td>
+                    </tr>
+                    <tr class="carbs22 protein13 fat8 calories9 sugar6">
+                        <td>• Shredded Lamb in Hot Garlic Sauce</td>
+                        <td>Rs. 125</td>
+                    </tr>
+                    <tr class="carbs16 protein10 fat5 calories7 sugar3">
+                        <td>• Mangolian Lamb</td>
+                        <td>Rs. 125</td>
+                    </tr>
+                    <tr class="carbs22 protein12 fat8 calories9 sugar1">
+                        <td>• Rendang Lamb</td>
+                        <td>Rs. 125</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- fish menu -->
+        <div class="right">
+            <table class="non-veg">
+                <caption>Fish</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="carbs14 protein11 fat4 calories6 sugar4">
+                        <td>• Sliced Fish in Szechuan Sauce</td>
+                        <td>Rs. 115</td>
+                    </tr>
+                    <tr class="carbs9 protein11 fat4 calories5 sugar4">
+                        <td>• Sliced Fish in Mustard Chilli Sauce</td>
+                        <td>Rs. 115</td>
+                    </tr>
+                    <tr class="carbs16 protein9 fat9 calories7 sugar4">
+                        <td>• Sliced Fish in Hot Garlic Sauce</td>
+                        <td>Rs. 115</td>
+                    </tr>
+                    <tr class="carbs15 protein11 fat6 calories7 sugar2">
+                        <td>• Grilled Fish with Roasted Garlic and Chillies</td>
+                        <td>Rs. 115</td>
+                    </tr>
+                    <tr class="carbs9 protein10 fat2 calories5 sugar5">
+                        <td>• Lemon and Coriander Fish</td>
+                        <td>Rs. 115</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Prawns menu -->
+        <div class="left">
+            <table class="non-veg">
+                <caption>Prawns</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="carbs9 protein9 fat4 calories5 sugar3">
+                        <td>• Wok Tossed Prawn with Broccoli in Oyster Sauce</td>
+                        <td>Rs. 175</td>
+                    </tr>
+                    <tr class="carbs14 protein8 fat3 calories6 sugar4">
+                        <td>• Prawn in Hot Garlic Sauce</td>
+                        <td>Rs. 175</td>
+                    </tr>
+                    <tr class="carbs14 protein7 fat7 calories6 sugar6">
+                        <td>• Black Pepper Prawn</td>
+                        <td>Rs. 175</td>
+                    </tr>
+                    <tr class="carbs14 protein13 fat4 calories6 sugar2">
+                        <td>• Prawn in Traditional Chilli Bean Sauce</td>
+                        <td>Rs. 175</td>
+                    </tr>
+                    <tr class="carbs10 protein9 fat5 calories5 sugar3">
+                        <td>• Kung Pao Prawns</td>
+                        <td>Rs. 175</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- chicken menu -->
+        <div class="right">
+            <table class="non-veg">
+                <caption>Chicken</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="carbs12 protein9 fat6 calories6 sugar5">
+                        <td>• Sliced Chicken with Asian Green</td>
+                        <td>Rs. 145</td>
+                    </tr>
+                    <tr class="carbs14 protein10 fat6 calories6 sugar3">
+                        <td>• Clay Pot Chicken</td>
+                        <td>Rs. 145</td>
+                    </tr>
+                    <tr class="carbs8 protein10 fat3 calories4 sugar2">
+                        <td>• Mallah Chicken</td>
+                        <td>Rs. 145</td>
+                    </tr>
+                    <tr class="carbs11 protein9 fat5 calories5 sugar4">
+                        <td>• GoFood's Chilli Chicken</td>
+                        <td>Rs. 145</td>
+                    </tr>
+                    <tr class="carbs14 protein8 fat5 calories6 sugar4">
+                        <td>• Chicken Manchurian</td>
+                        <td>Rs. 145</td>
+                    </tr>
+                    <tr class="carbs15 protein11 fat7 calories7 sugar5">
+                        <td>• King Pao Chicken</td>
+                        <td>Rs. 145</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Appetizers menu -->
+        <div class="left">
+            <table>
+                <caption>Appetizers</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="veg carbs9 protein3 fat6 calories6 sugar5">
+                        <td>• Crispy Chilli Potatoes</td>
+                        <td>Rs. 95</td>
+                    </tr>
+                    <tr class="veg carbs8 protein4 fat4 calories4 sugar2">
+                        <td>• Cheese and Corn Rolls</td>
+                        <td>Rs. 125</td>
+                    </tr>
+                    <tr class="veg carbs7 protein3 fat4 calories4 sugar4">
+                        <td>• Crispy Tangy Button Mushrooms</td>
+                        <td>Rs. 160</td>
+                    </tr>
+                    <tr class="veg carbs8 protein4 fat4 calories4 sugar3">
+                        <td>• Garlic and Cheese Wontons</td>
+                        <td>Rs. 160</td>
+                    </tr>
+                    <tr class="non-veg carbs6 protein8 fat3 calories3 sugar2">
+                        <td>• Juicy Chicken Drumsticks</td>
+                        <td>Rs. 180</td>
+                    </tr>
+                    <tr class="non-veg carbs15 protein8 fat8 calories6 sugar2">
+                        <td>• Chengdu Mountain Chicken</td>
+                        <td>Rs. 180</td>
+                    </tr>
+                    <tr class="non-veg carbs9 protein11 fat4 calories5 sugar1">
+                        <td>• Shredded Chicken with Dry Red Chillies</td>
+                        <td>Rs. 180</td>
+                    </tr>
+                    <tr class="non-veg carbs10 protein9 fat5 calories5 sugar4">
+                        <td>• Crispy Garlic Chilli Fish</td>
+                        <td>Rs. 185</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Mocktails menu -->
+        <div class="right">
+            <table class="veg">
+                <caption>Mocktails</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="carbs7 protein2 fat1 calories4 sugar8">
+                        <td>• Virgin Mojito</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="carbs6 protein1 fat1 calories3 sugar7">
+                        <td>• Insomnia</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="carbs8 protein2 fat1 calories4 sugar9">
+                        <td>• Sunset Cooler</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="carbs9 protein1 fat1 calories5 sugar1">
+                        <td>• Apocalypse</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="carbs13 protein1 fat1 calories6 sugar10">
+                        <td>• Easy Rider</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="carbs12 protein4 fat5 calories6 sugar8">
+                        <td>• Midnight Beauty</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="carbs4 protein1 fat1 calories2 sugar5">
+                        <td>• Shirley Temple</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="carbs7 protein2 fat2 calories3 sugar7">
+                        <td>• Cinderella</td>
+                        <td>Rs. 125</td>
+                    </tr>
+                    <tr class="carbs10 protein4 fat5 calories5 sugar6">
+                        <td>• Assagato</td>
+                        <td>Rs. 150</td>
+                    </tr>
+                    <tr class="carbs14 protein4 fat1 calories6 sugar9">
+                        <td>• Green with Envy</td>
+                        <td>Rs. 150</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Beverages menu -->
+        <div class="left">
+            <table class="veg">
+                <caption>Beverages</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="carbs6 protein1 fat1 calories10 sugar7">
+                        <td>• Enery Booster</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="carbs12 protein6 fat6 calories6 sugar8">
+                        <td>• Fruit and Nut Milk Shake</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="carbs14 protein6 fat5 calories6 sugar9">
+                        <td>• Milk Shake with ice cream</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="carbs10 protein5 fat2 calories5 sugar6">
+                        <td>• Cold Coffee</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="carbs14 protein6 fat6 calories6 sugar7">
+                        <td>• Cold Coffee with ice cream</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="carbs4 protein2 fat1 calories2 sugar3">
+                        <td>• Diet Drink</td>
+                        <td>Rs. 60</td>
+                    </tr>
+                    <tr class="carbs8 protein6 fat3 calories4 sugar7">
+                        <td>• Hot Chocolate</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="carbs2 protein1 fat1 calories1 sugar1">
+                        <td>• Espresso</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="carbs4 protein3 fat3 calories1 sugar4">
+                        <td>• Cappuccino</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- thai menu -->
+        <div class="right">
+            <!-- thai soups -->
+            <table>
+                <caption class="menu_subhead">Thai</caption>
+                <caption>Soup</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="both">
+                        <td>• Tom Kha (veg/chicken)</td>
+                        <td>Rs. 105/145</td>
+                    </tr>
+                    <tr class="both_veg carbs9 protein6 fat6 calories5 sugar4">
+                        <td>• Tom Kha</td>
+                        <td>Rs. 105</td>
+                    </tr>
+                    <tr class="both_non-veg carbs14 protein9 fat8 calories6 sugar4">
+                        <td>• Tom Kha (chicken)</td>
+                        <td>Rs. 145</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Tom Yum (veg/chicken)</td>
+                        <td>Rs. 105/145</td>
+                    </tr>
+                    <tr class="both_veg carbs6 protein4 fat3 calories3 sugar5">
+                        <td>• Tom Yum</td>
+                        <td>Rs. 105</td>
+                    </tr>
+                    <tr class="both_non-veg carbs7 protein10 fat2 calories4 sugar4">
+                        <td>• Tom Yum (chicken)</td>
+                        <td>Rs. 145</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- thai Appetizers -->
+            <table>
+                <caption>Appetizers</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="both">
+                        <td>• Thai Spring Roll (veg/chicken)</td>
+                        <td>Rs. 115/135</td>
+                    </tr>
+                    <tr class="both_veg carbs5 protein3 fat2 calories2 sugar3">
+                        <td>• Thai Spring Roll</td>
+                        <td>Rs. 115</td>
+                    </tr>
+                    <tr class="both_non-veg carbs6 protein6 fat2 calories2 sugar4">
+                        <td>• Thai Spring Roll (chicken)</td>
+                        <td>Rs. 135</td>
+                    </tr>
+
+                    <tr class="veg carbs24 protein14 fat9 calories10 sugar5">
+                        <td>• Crispy Sweet Chilli</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="non-veg carbs7 protein5 fat4 calories3 sugar4">
+                        <td>• Chicken Satay</td>
+                        <td>Rs. 175</td>
+                    </tr>
+                    <tr class="non-veg carbs16 protein11 fat7 calories7 sugar5">
+                        <td>• Crispy Fish With Sweet Chilli</td>
+                        <td>Rs. 195</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- thai salads -->
+            <table>
+                <caption>Salads</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="carbs12 protein8 fat5 calories6 sugar5">
+                        <td>• Yum Woo Sen</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                    <tr class="carbs10 protein5 fat3 calories5 sugar7">
+                        <td>• Som Tum</td>
+                        <td>Rs. 70</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- thai main course -->
+            <table>
+                <caption>Main Course</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="veg carbs7 protein4 fat5 calories4 sugar3">
+                        <td>• Exotic Vegetables With Basil Chilli</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="non-veg carbs12 protein11 fat4 calories6 sugar3">
+                        <td>• Wok Fried Chicken With Basil Chilli</td>
+                        <td>Rs. 130</td>
+                    </tr>
+                    <tr class="both">
+                        <td>• Thai Red Curry (veg/chicken)</td>
+                        <td>Rs. 100/135</td>
+                    </tr>
+                    <tr class="both_veg carbs7 protein3 fat5 calories3 sugar4">
+                        <td>• Thai Red Curry</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="both_non-veg carbs15 protein8 fat4 calories3 sugar3">
+                        <td>• Thai Red Curry (chicken)</td>
+                        <td>Rs. 135</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Thai Green Curry (veg/chicken)</td>
+                        <td>Rs. 100/135</td>
+                    </tr>
+                    <tr class="both_veg carbs10 protein8 fat5 calories5 sugar3">
+                        <td>• Thai Green Curry</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="both_non-veg carbs15 protein11 fat6 calories6 sugar2">
+                        <td>• Thai Green Curry (chicken)</td>
+                        <td>Rs. 135</td>
+                    </tr>
+
+                    <tr class="non-veg carbs24 protein13 fat9 calories10 sugar6">
+                        <td>• Sliced Fish With Fresh Basil & Roasted Chilli Flakes</td>
+                        <td>Rs. 165</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- thai rice and noodles -->
+            <table>
+                <caption>Rice & Noodles</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="both">
+                        <td>• Basil Rice (veg/chicken)</td>
+                        <td>Rs. 75/105</td>
+                    </tr>
+                    <tr class="both_veg carbs12 protein6 fat4 calories6 sugar5">
+                        <td>• Basil Rice</td>
+                        <td>Rs. 75</td>
+                    </tr>
+                    <tr class="both_non-veg carbs21 protein14 fat4 calories9 sugar3">
+                        <td>• Basil Rice (chicken)</td>
+                        <td>Rs. 105</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Pad Thai Noodle (veg/chicken)</td>
+                        <td>Rs. 105/140</td>
+                    </tr>
+                    <tr class="both_veg carbs9 protein6 fat4 calories5 sugar4">
+                        <td>• Pad Thai Noodle</td>
+                        <td>Rs. 105</td>
+                    </tr>
+                    <tr class="both_non-veg carbs19 protein11 fat5 calories8 sugar5">
+                        <td>• Pad Thai Noodle (chicken)</td>
+                        <td>Rs. 140</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Nutty Pineapple Fried Rice (veg/chicken)</td>
+                        <td>Rs. 105/140</td>
+                    </tr>
+                    <tr class="both_veg carbs16 protein7 fat7 calories7 sugar5">
+                        <td>• Nutty Pineapple Fried Rice</td>
+                        <td>Rs. 105</td>
+                    </tr>
+                    <tr class="both_non-veg carbs19 protein11 fat7 calories8 sugar6">
+                        <td>• Nutty Pineapple Fried Rice (chicken)</td>
+                        <td>Rs. 140</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Chinese menu -->
+        <div class="left">
+            <!-- <h3>Chinese</h3> -->
+
+            <!-- Chinese soups -->
+            <table>
+                <caption class="menu_subhead">Chinese</caption>
+                <caption>Soups</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="both">
+                        <td>• Manchow (veg/chicken)</td>
+                        <td>Rs. 60/85</td>
+                    </tr>
+                    <tr class="both_veg carbs6 protein3 fat4 calories3 sugar3">
+                        <td>• Manchow</td>
+                        <td>Rs. 60</td>
+                    </tr>
+                    <tr class="both_non-veg carbs6 protein4 fat3 calories3 sugar3">
+                        <td>• Manchow (chicken)</td>
+                        <td>Rs. 85</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Sweet Corn (veg/chicken)</td>
+                        <td>Rs. 60/85</td>
+                    </tr>
+                    <tr class="both_veg carbs8 protein4 fat2 calories4 sugar5">
+                        <td>• Sweet Corn</td>
+                        <td>Rs. 60</td>
+                    </tr>
+                    <tr class="both_non-veg carbs8 protein8 fat3 calories4 sugar4">
+                        <td>• Sweet Corn (chicken)</td>
+                        <td>Rs. 85</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Hot 'N' Sour (veg/chicken)</td>
+                        <td>Rs. 60/85</td>
+                    </tr>
+                    <tr class="both_veg carbs5 protein2 fat4 calories2 sugar2">
+                        <td>• Hot 'N' Sour</td>
+                        <td>Rs. 60</td>
+                    </tr>
+                    <tr class="both_non-veg carbs11 protein9 fat6 calories5 sugar3">
+                        <td>• Hot 'N' Sour (chicken)</td>
+                        <td>Rs. 85</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Lemon and Coriander (mushroom/chicken)</td>
+                        <td>Rs. 60/85</td>
+                    </tr>
+                    <tr class="both_veg carbs5 protein3 fat3 calories2 sugar3">
+                        <td>• Lemon and Coriander (mushroom)</td>
+                        <td>Rs. 60</td>
+                    </tr>
+                    <tr class="both_non-veg carbs7 protein10 fat2 calories4 sugar3">
+                        <td>• Lemon and Coriander (chicken)</td>
+                        <td>Rs. 85</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Wonton Soup (veg/chicken)</td>
+                        <td>Rs. 85/100</td>
+                    </tr>
+                    <tr class="both_veg carbs7 protein4 fat4 calories3 sugar4">
+                        <td>• Wonton Soup</td>
+                        <td>Rs. 85/100</td>
+                    </tr>
+                    <tr class="both_non-veg carbs11 protein7 fat5 calories5 sugar2">
+                        <td>• Wonton Soup (chicken)</td>
+                        <td>Rs. 85/100</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Talumein (veg/chicken)</td>
+                        <td>Rs. 85/100</td>
+                    </tr>
+                    <tr class="both_veg carbs7 protein3 fat4 calories3 sugar3">
+                        <td>• Talumein</td>
+                        <td>Rs. 85</td>
+                    </tr>
+                    <tr class="both_non-veg carbs7 protein6 fat4 calories3 sugar3">
+                        <td>• Talumein (chicken)</td>
+                        <td>Rs. 100</td>
+                    </tr>
+
+                    <tr class="non-veg carbs9 protein3 fat5 calories5 sugar3">
+                        <td>• Noodles Soup with Burnt Garlic (chicken)</td>
+                        <td>Rs. 100</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Thukpa (veg/chicken)</td>
+                        <td>Rs. 85/100</td>
+                    </tr>
+                    <tr class="both_veg carbs9 protein6 fat3 calories5 sugar3">
+                        <td>• Thukpa</td>
+                        <td>Rs. 85</td>
+                    </tr>
+                    <tr class="both_non-veg carbs9 protein7 fat4 calories5 sugar2">
+                        <td>• Thukpa (chicken)</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Chinese dimsums -->
+            <table>
+                <caption>Dimsums</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="both">
+                        <td>• Classic Dimsum (veg/chicken)</td>
+                        <td>Rs. 120/170</td>
+                    </tr>
+                    <tr class="both_veg carbs4 protein2 fat2 calories1 sugar1">
+                        <td>• Classic Dimsum</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="both_non-veg carbs4 protein3 fat2 calories1 sugar1">
+                        <td>• Classic Dimsum (chicken)</td>
+                        <td>Rs. 170</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Fried Dumplings With Sweet Chilli (veg/chicken)</td>
+                        <td>Rs. 120/170</td>
+                    </tr>
+                    <tr class="both_veg carbs4 protein3 fat3 calories2 sugar2">
+                        <td>• Fried Dumplings With Sweet Chilli</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="both_non-veg carbs6 protein4 fat3 calories3 sugar3">
+                        <td>• Fried Dumplings With Sweet Chilli (chicken)</td>
+                        <td>Rs. 170</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Pan Fried Kothe (veg/chicken)</td>
+                        <td>Rs. 140/190</td>
+                    </tr>
+                    <tr class="both_veg carbs5 protein3 fat3 calories2 sugar1">
+                        <td>• Pan Fried Kothe</td>
+                        <td>Rs. 140</td>
+                    </tr>
+                    <tr class="both_non-veg carbs5 protein8 fat3 calories2 sugar1">
+                        <td>• Pan Fried Kothe (chicken)</td>
+                        <td>Rs. 190</td>
+                    </tr>
+
+                    <tr class="both">
+                        <td>• Dimsums Momos (veg/chicken)</td>
+                        <td>Rs. 140/190</td>
+                    </tr>
+                    <tr class="both_veg carbs4 protein2 fat2 calories1 sugar1">
+                        <td>• Dimsums Momos</td>
+                        <td>Rs. 140</td>
+                    </tr>
+                    <tr class="both_non-veg carbs5 protein5 fat3 calories2 sugar2">
+                        <td>• Dimsums Momos (chicken)</td>
+                        <td>Rs. 190</td>
+                    </tr>
+
+                    <tr class="veg carbs4 protein3 fat2 calories1 sugar1">
+                        <td>• Thai Green Curry Vegetables Dumplings</td>
+                        <td>Rs. 140</td>
+                    </tr>
+                    <tr class="non-veg carbs4 protein4 fat2 calories1 sugar2">
+                        <td>• Chicken Dumplings With Thai Red Curry</td>
+                        <td>Rs. 190</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- local food menu -->
+        <div class="right">
+            <table>
+                <caption>Local Food</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="veg carbs9 protein4 fat5 calories4 sugar4">
+                        <td>• Paranthe</td>
+                        <td>Rs. 50</td>
+                    </tr>
+                    <tr class="non-veg carbs13 protein9 fat7 calories6 sugar5">
+                        <td>• Butter Chicken</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="veg carbs12 protein10 fat6 calories6 sugar3">
+                        <td>• Seekh Kebab</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="veg carbs15 protein7 fat6 calories7 sugar5">
+                        <td>• Chole Bhature</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="veg carbs10 protein4 fat6 calories5 sugar4">
+                        <td>• Veg Biryani</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="non-veg carbs6 protein7 fat8 calories5 sugar1">
+                        <td>• Beef Nihari</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                    <tr class="veg carbs16 protein6 fat7 calories6 sugar1">
+                        <td>• Kathi Roll</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="both">
+                        <td>• Momos (veg,chicken)</td>
+                        <td>Rs. 40/70</td>
+                    </tr>
+                    <tr class="both_veg carbs7 protein4 fat3 calories3 sugar2">
+                        <td>• Momos</td>
+                        <td>Rs. 40</td>
+                    </tr>
+                    <tr class="both_non-veg carbs13 protein7 fat9 calories6 sugar1">
+                        <td>• Momos (chicken)</td>
+                        <td>Rs. 70</td>
+                    </tr>
+    
+                    <tr class="veg carbs15 protein6 fat6 calories7 sugar5">
+                        <td>• Rabri Falooda</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="veg carbs11 protein13 fat9 calories10 sugar8">
+                        <td>• Blueberry Cheesecake</td>
+                        <td>Rs. 350</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Hot Combos menu -->
+        <div class="left">
+            <table>
+                <caption>Hot Combos</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="veg carbs24 protein14 fat8 calories10 sugar6">
+                        <td>• Veg Special Combo</td>
+                        <td>Rs. 279</td>
+                    </tr>
+                    <tr class="non-veg carbs19 protein14 fat9 calories8 sugar4">
+                        <td>• Chicken Special Combo</td>
+                        <td>Rs. 359</td>
+                    </tr>
+                    <tr class="non-veg carbs22 protein14 fat9 calories9 sugar5">
+                        <td>• Mutton Special Combo</td>
+                        <td>Rs. 379</td>
+                    </tr>
+                    <tr class="both">
+                        <td>• Chinese Combo(veg/non-veg)</td>
+                        <td>Rs. 279/359</td>
+                    </tr>
+                    <tr class="both_veg carbs11 protein7 fat5 calories5 sugar3">
+                        <td>• Chinese Combo</td>
+                        <td>Rs. 279</td>
+                    </tr>
+                    <tr class="both_non-veg carbs18 protein12 fat6 calories8 sugar6">
+                        <td>• Chinese Combo</td>
+                        <td>Rs. 359</td>
+                    </tr>
+    
+                    <tr class="both">
+                        <td>• Thai Red Curry Combo(veg/non-veg)</td>
+                        <td>Rs. 325/365</td>
+                    </tr>
+                    <tr class="both_veg carbs7 protein3 fat5 calories3 sugar4">
+                        <td>• Thai Red Curry Combo</td>
+                        <td>Rs. 325</td>
+                    </tr>
+                    <tr class="both_non-veg carbs15 protein8 fat4 calories7 sugar3">
+                        <td>• Thai Red Curry Combo</td>
+                        <td>Rs. 365</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- speciality menu (Foody andaaz) -->
+        <div class="right">
+            <table>
+                <caption>Foody Andaaz</caption>
+                <thead>
+                    <tr>
+                        <th>Dishes</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="veg carbs14 protein4 fat8 calories6 sugar9">
+                        <td>• Darsan</td>
+                        <td>Rs. 100</td>
+                    </tr>
+                    <tr class="veg carbs9 protein3 fat5 calories5 sugar5">
+                        <td>• Crispy Chilli Potatoes</td>
+                        <td>Rs. 95</td>
+                    </tr>
+                    <tr class="both">
+                        <td>• Khow Suey (veg/chicken)</td>
+                        <td>Rs. 135/180</td>
+                    </tr>
+                    <tr class="both_veg carbs19 protein5 fat9 calories8 sugar3">
+                        <td>• Veg Khow Suey</td>
+                        <td>Rs. 135</td>
+                    </tr>
+                    <tr class="both_non-veg carbs20 protein7 fat8 calories8 sugar4">
+                        <td>• Chicken Khow Suey</td>
+                        <td>Rs. 180</td>
+                    </tr>
+    
+                    <tr class="non-veg carbs6 protein8 fat3 calories3 sugar2">
+                        <td>• Juicy Chicken Drumsticks</td>
+                        <td>Rs. 180</td>
+                    </tr>
+                    <tr class="non-veg carbs7 protein6 fat4 calories3 sugar4">
+                        <td>• Chicken Satay</td>
+                        <td>Rs. 175</td>
+                    </tr>
+                    <tr class="both">
+                        <td>• Singapore Style Noodle (veg/chicken)</td>
+                        <td>Rs. 90/120</td>
+                    </tr>
+                    <tr class="both_veg carbs15 protein5 fat5 calories7 sugar4">
+                        <td>• Singapore Style Noodle</td>
+                        <td>Rs. 90</td>
+                    </tr>
+                    <tr class="both_non-veg carbs15 protein9 fat5 calories7 sugar4">
+                        <td>• Singapore Style Noodle (chicken)</td>
+                        <td>Rs. 120</td>
+                    </tr>
+    
+                    <tr class="veg carbs18 protein7 fat7 calories8 sugar6">
+                        <td>• Death by Chocolate</td>
+                        <td>Rs. 120</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div>
+            <p>copyright © www.gofoody.com | All rights are reserved |</p>
+        </div>
+    </footer>
+    <script src="../JAVASCRIPT/navbar.js"></script>
+</body>
+
+<script src="../JAVASCRIPT/menu.js"></script>
+
+</html>
